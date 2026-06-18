@@ -46,27 +46,55 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // Contact form submission mock
+    // Contact form submission via hidden iframe
     const form = document.querySelector('.contact-form');
-    if(form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
+    const hiddenIframe = document.getElementById('hidden_iframe');
+
+    if(form && hiddenIframe) {
+        window.submitted = false; // Make it global so iframe onload can access if needed, though we use event listener here.
+        
+        form.addEventListener('submit', () => {
+            window.submitted = true;
             const btn = form.querySelector('button');
-            const originalText = btn.textContent;
-            btn.textContent = 'Sending...';
-            btn.disabled = true;
-            
+            // Defer disabling the button so it doesn't prevent the form submission
             setTimeout(() => {
-                btn.textContent = 'Message Sent!';
-                btn.style.background = '#10b981';
+                btn.textContent = 'Sending...';
+                btn.disabled = true;
+            }, 10);
+        });
+
+        hiddenIframe.addEventListener('load', () => {
+            if (window.submitted) {
+                const btn = form.querySelector('button');
+                btn.textContent = 'Send Message';
+                btn.disabled = false;
                 form.reset();
-                
-                setTimeout(() => {
-                    btn.textContent = originalText;
-                    btn.disabled = false;
-                    btn.style.background = '';
-                }, 3000);
-            }, 1500);
+
+                const successModal = document.getElementById('success-modal');
+                if(successModal) {
+                    successModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+                window.submitted = false;
+            }
+        });
+    }
+
+    // Success Modal Close Logic
+    const successModal = document.getElementById('success-modal');
+    const successCloseBtns = document.querySelectorAll('.success-close, .success-close-btn');
+    if(successModal) {
+        successCloseBtns.forEach(closeBtn => {
+            closeBtn.addEventListener('click', () => {
+                successModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+        window.addEventListener('click', (e) => {
+            if (e.target === successModal) {
+                successModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
         });
     }
 

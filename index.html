@@ -170,18 +170,25 @@
             <div class="glass-card contact-card">
                 <h2>Let's Create Something Great</h2>
                 <p>Ready to elevate your video or podcast content? Get in touch today.</p>
-                <form class="contact-form" onsubmit="event.preventDefault();">
+                <form class="contact-form" action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfB5CnHPHxljSMiM62i8BQ92Z31tYB0IRkfhTp_3o1ZbR5cHg/formResponse" method="POST" target="hidden_iframe">
+                    <input type="hidden" name="fvv" value="1">
+                    <input type="hidden" name="partialResponse" value="[null,null,&quot;-8960149881709519804&quot;]">
+                    <input type="hidden" name="pageHistory" value="0">
+                    <input type="hidden" name="fbzx" value="-8960149881709519804">
+                    <input type="hidden" name="submissionTimestamp" value="-1">
+                    
                     <div class="form-group">
-                        <input type="text" placeholder="Name" required>
+                        <input type="text" name="entry.356832175" placeholder="Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Email" required>
+                        <input type="email" name="entry.1058583829" placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea rows="4" placeholder="Message" required></textarea>
+                        <textarea name="entry.1243154264" rows="4" placeholder="Message" required></textarea>
                     </div>
                     <button type="submit" class="btn-primary w-100">Send Message</button>
                 </form>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
             </div>
         </section>
 
@@ -210,6 +217,17 @@
                         </div>
                     </a>
                 </div>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div id="success-modal" class="modal">
+            <div class="glass-card modal-content" style="max-width: 500px; padding: 4rem 2rem;">
+                <span class="close-modal success-close">&times;</span>
+                <div style="font-size: 4rem; margin-bottom: 1rem;">✅</div>
+                <h2>Message Sent!</h2>
+                <p style="color: var(--text-muted); margin-top: 1rem;">Thank you for reaching out. I'll get back to you as soon as possible.</p>
+                <button class="btn-primary success-close-btn" style="margin-top: 2rem;">Close</button>
             </div>
         </div>
     </main>
