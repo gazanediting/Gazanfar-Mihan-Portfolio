@@ -39,7 +39,7 @@
                 <h2>Hi, I'm Gazanfar Mihan</h2>
                 <p>A passionate and skilled video editor, specializing in bringing podcasts to life with professional editing.</p>
                 <div class="hero-cta">
-                    <a href="#projects" class="btn-primary">View My Work</a>
+                    <a href="javascript:void(0)" id="view-works-btn" class="btn-primary">View My Work</a>
                     <a href="#contact" class="btn-secondary">Let's Talk</a>
                 </div>
             </div>
@@ -81,14 +81,11 @@
                     <h3>Color Grading</h3>
                     <p>Cinematic looks and color correction for professional polish.</p>
                 </div>
-                <div class="glass-card skill-card">
-                    <h3>Audio Mixing</h3>
-                    <p>Crisp vocals, noise reduction, and balanced levels.</p>
-                </div>
+
                 <div class="glass-card skill-card tool-card">
                     <span class="tool-tag">Premiere Pro</span>
                     <span class="tool-tag">DaVinci Resolve</span>
-                    <span class="tool-tag">Audition</span>
+
                     <span class="tool-tag">Final Cut Pro</span>
                     <span class="tool-tag">After Effects</span>
                 </div>
@@ -102,13 +99,13 @@
                 <p>A glimpse into my recent editing work.</p>
             </div>
             <div class="projects-grid">
-                <div class="glass-card project-card" id="podcast-card" style="cursor: pointer;">
+                <div class="glass-card project-card">
                     <div style="height: 100%;">
                         <div class="project-img">
                             <img src="assets/podcast_editing.png" alt="Podcast Editing Project">
                         </div>
                         <div class="project-info">
-                            <h3>Podcast work.</h3>
+                            <h3>Podcast edit</h3>
                             <p>Full multicam edit, color grading, and audio mastering.</p>
                         </div>
                     </div>
@@ -124,11 +121,11 @@
                 </div>
                 <div class="glass-card project-card">
                     <div class="project-img">
-                        <img src="assets/audio_mixing.png" alt="Audio Mixing Interface">
+                        <img src="assets/long_videos.png" alt="Long Videos Editing">
                     </div>
                     <div class="project-info">
-                        <h3>Studio Sessions</h3>
-                        <p>Advanced audio cleanup and multi-track mixing.</p>
+                        <h3>Long videos</h3>
+                        <p>Comprehensive long-form video editing, narrative structuring, and deep dives.</p>
                     </div>
                 </div>
             </div>
@@ -170,21 +167,15 @@
             <div class="glass-card contact-card">
                 <h2>Let's Create Something Great</h2>
                 <p>Ready to elevate your video or podcast content? Get in touch today.</p>
-                <form class="contact-form" action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfB5CnHPHxljSMiM62i8BQ92Z31tYB0IRkfhTp_3o1ZbR5cHg/formResponse" method="POST" target="hidden_iframe">
-                    <input type="hidden" name="fvv" value="1">
-                    <input type="hidden" name="partialResponse" value="[null,null,&quot;-8960149881709519804&quot;]">
-                    <input type="hidden" name="pageHistory" value="0">
-                    <input type="hidden" name="fbzx" value="-8960149881709519804">
-                    <input type="hidden" name="submissionTimestamp" value="-1">
-                    
+                <form class="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfoNA_3SOX66o9-bWs3wzqQIvKIuSv2g7uSq3W9NJGmjpQsHA/formResponse" method="POST" target="hidden_iframe">
                     <div class="form-group">
-                        <input type="text" name="entry.356832175" placeholder="Name" required>
+                        <input type="text" name="entry.1591181917" placeholder="Name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="entry.1058583829" placeholder="Email" required>
+                        <input type="email" name="entry.949180738" placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="entry.1243154264" rows="4" placeholder="Message" required></textarea>
+                        <textarea name="entry.1995113670" rows="4" placeholder="Message" required></textarea>
                     </div>
                     <button type="submit" class="btn-primary w-100">Send Message</button>
                 </form>
@@ -192,30 +183,21 @@
             </div>
         </section>
 
-        <!-- Podcast Modal -->
-        <div id="podcast-modal" class="modal">
-            <div class="glass-card modal-content">
-                <span class="close-modal">&times;</span>
-                <h2>Podcast Shorts Preview</h2>
+        <!-- Works Modal -->
+        <div id="works-modal" class="modal">
+            <div class="glass-card modal-content" style="max-width: 1000px;">
+                <span class="close-modal works-close">&times;</span>
+                <h2>My Work</h2>
                 <div class="video-grid">
-                    <a href="https://youtube.com/shorts/ImXxVjyvzBM?feature=share" target="_blank" class="video-link">
-                        <div class="img-container">
-                            <img src="https://img.youtube.com/vi/ImXxVjyvzBM/hqdefault.jpg" alt="Podcast Short 1">
-                            <div class="play-icon">▶</div>
-                        </div>
-                    </a>
-                    <a href="https://youtube.com/shorts/3KORQWC2muc?feature=share" target="_blank" class="video-link">
-                        <div class="img-container">
-                            <img src="https://img.youtube.com/vi/3KORQWC2muc/hqdefault.jpg" alt="Podcast Short 2">
-                            <div class="play-icon">▶</div>
-                        </div>
-                    </a>
-                    <a href="https://youtube.com/shorts/dxhnn39bijg?feature=share" target="_blank" class="video-link">
-                        <div class="img-container">
-                            <img src="https://img.youtube.com/vi/dxhnn39bijg/hqdefault.jpg" alt="Podcast Short 3">
-                            <div class="play-icon">▶</div>
-                        </div>
-                    </a>
+                    <div class="iframe-container" style="position: relative; width: 100%; aspect-ratio: 9/16; border-radius: 12px; overflow: hidden;">
+                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/ImXxVjyvzBM" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;height:100%;object-fit:cover;top:0;bottom:0;left:0;right:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black;background:rgba(0,0,0,0.5);border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;padding-left:5px;transition:transform 0.2s}a:hover span{transform:scale(1.1)}</style><a href='https://www.youtube.com/embed/ImXxVjyvzBM?autoplay=1'><img src='assets/thumb1.png' alt='Video 1'><span>▶</span></a>" allowfullscreen></iframe>
+                    </div>
+                    <div class="iframe-container" style="position: relative; width: 100%; aspect-ratio: 9/16; border-radius: 12px; overflow: hidden;">
+                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/3KORQWC2muc" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;height:100%;object-fit:cover;top:0;bottom:0;left:0;right:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black;background:rgba(0,0,0,0.5);border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;padding-left:5px;transition:transform 0.2s}a:hover span{transform:scale(1.1)}</style><a href='https://www.youtube.com/embed/3KORQWC2muc?autoplay=1'><img src='assets/thumb2.png' alt='Video 2'><span>▶</span></a>" allowfullscreen></iframe>
+                    </div>
+                    <div class="iframe-container" style="position: relative; width: 100%; aspect-ratio: 9/16; border-radius: 12px; overflow: hidden;">
+                        <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" src="https://www.youtube.com/embed/dxhnn39bijg" srcdoc="<style>*{padding:0;margin:0;overflow:hidden}html,body{height:100%}img,span{position:absolute;width:100%;height:100%;object-fit:cover;top:0;bottom:0;left:0;right:0;margin:auto}span{height:1.5em;text-align:center;font:48px/1.5 sans-serif;color:white;text-shadow:0 0 0.5em black;background:rgba(0,0,0,0.5);border-radius:50%;width:60px;height:60px;display:flex;align-items:center;justify-content:center;padding-left:5px;transition:transform 0.2s}a:hover span{transform:scale(1.1)}</style><a href='https://www.youtube.com/embed/dxhnn39bijg?autoplay=1'><img src='assets/thumb3.png' alt='Video 3'><span>▶</span></a>" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
